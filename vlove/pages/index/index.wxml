@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="container">
+
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -7,7 +8,25 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+
+  <view class='card'>
+    <form catchsubmit="formSubmit" catchreset="formReset">
+      <input class="weui-input" name="question-title" placeholder="请输入问题" />
+      <input class="weui-input" name="question-answer" placeholder="请输入答案" />
+      <view class="page-section-title">请选择赏金</view>
+      <radio-group name="radio">
+        <label>
+          <radio value="radio1" />1.00</label>
+        <label>
+          <radio value="radio2" />5.21</label>
+        <label>
+          <radio value="radio1" />6.66</label>
+        <label>
+          <radio value="radio2" />8.88</label>
+      </radio-group>
+      <button name="create" type="primary" formType="submit">生成卡片</button>
+      <button formType="reset">重新输入</button>
+      </form>
   </view>
+
 </view>

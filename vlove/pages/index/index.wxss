@@ -16,6 +16,8 @@
   color: #aaa;
 }
 
-.usermotto {
-  margin-top: 200px;
+
+
+.card{
+  margin-bottom: 300rpx;
 }
